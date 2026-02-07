@@ -35,7 +35,7 @@ export function Testimonials() {
 
 function TestimonialCard({ quote, name, role, avatarColor }: any) {
     return (
-        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full">
+        <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-default">
             <div className="text-blue-100 text-6xl font-serif leading-none mb-4">"</div>
             <p className="text-gray-600 text-lg mb-8 italic flex-1 relative z-10 -mt-8">
                 {quote}

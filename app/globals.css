@@ -1,22 +1,56 @@
 @import "tailwindcss";
 
+@layer utilities {
+  .mask-gradient {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}
+
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
+
   --color-accent-1: #A5D8FF;
   --color-accent-2: #D0BCFF;
   --color-accent-3: #B197FC;
-  
+
   --color-primary: #3B82F6;
   --color-primary-bg: #EFF6FF;
-  
-  --color-sec-bg: #FFFFFF;
-  --color-sec: #F3F4F6;
-  
+
+  --color-secondary-bg: #FFFFFF;
+  --color-secondary: #F3F4F6;
+
   --color-dark-bg: #000000;
-  --color-dark-sec-bg: #404040;
-  --color-dark-sec: #737373;
+  --color-dark-secondary-bg: #404040;
+  --color-dark-secondary: #737373;
+
+  --animate-float-slow: float 6s ease-in-out infinite;
+  --animate-float-medium: float 5s ease-in-out infinite;
+  --animate-float-fast: float 4s ease-in-out infinite;
+  --animate-marquee: marquee 25s linear infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+
+    100% {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 :root {

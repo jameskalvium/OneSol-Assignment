@@ -1,35 +1,21 @@
 export function Brands() {
+    const brands = [
+        "LinkedIn", "Indeed", "Glassdoor", "GitHub", "Wellfound", "ZipRecruiter"
+    ];
+
     return (
-        <section className="bg-white py-12 border-t border-gray-100">
+        <section className="bg-white py-12 border-t border-gray-100 overflow-hidden">
             <div className="text-center mb-8">
                 <h3 className="text-xl font-bold text-gray-900">Post Once, Reach Everywhere</h3>
                 <p className="text-gray-500 text-sm">Direct integrations with the tools your team already uses.</p>
             </div>
 
-            <div className="relative flex overflow-x-hidden group">
-                <div className="animate-marquee whitespace-nowrap flex items-center gap-16 px-8">
-                    <BrandLogo name="LinkedIn" />
-                    <BrandLogo name="Indeed" />
-                    <BrandLogo name="Glassdoor" />
-                    <BrandLogo name="GitHub" />
-                    <BrandLogo name="Wellfound" />
-                    <BrandLogo name="ZipRecruiter" />
-                    {/* Duplicate for seamless loop */}
-                    <BrandLogo name="LinkedIn" />
-                    <BrandLogo name="Indeed" />
-                    <BrandLogo name="Glassdoor" />
-                    <BrandLogo name="GitHub" />
-                    <BrandLogo name="Wellfound" />
-                    <BrandLogo name="ZipRecruiter" />
-                </div>
-
-                <div className="absolute top-0 animate-marquee2 whitespace-nowrap flex items-center gap-16 px-8 ml-full">
-                    <BrandLogo name="LinkedIn" />
-                    <BrandLogo name="Indeed" />
-                    <BrandLogo name="Glassdoor" />
-                    <BrandLogo name="GitHub" />
-                    <BrandLogo name="Wellfound" />
-                    <BrandLogo name="ZipRecruiter" />
+            <div className="relative flex overflow-x-hidden group mask-gradient">
+                <div className="animate-marquee whitespace-nowrap flex items-center gap-16 px-8 py-4">
+                    {/* Quadruple the list to ensure it covers large screens and loops seamlessly */}
+                    {[...brands, ...brands, ...brands, ...brands].map((name, index) => (
+                        <BrandLogo key={index} name={name} />
+                    ))}
                 </div>
             </div>
         </section>
